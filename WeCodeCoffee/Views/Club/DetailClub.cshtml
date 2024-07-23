@@ -1,0 +1,73 @@
+﻿@model Club
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4 bg-dark p-4 rounded w-50">
+        Coffee&Coder
+        <small>Club</small>
+    </h1>
+
+    <!-- Portfolio Item Row -->
+    <div class="row">
+
+        <div class="col-md-8 bg-dark p-4 rounded">
+        <img class="img-fluid rounded-3" src="@Model.Image" alt="">
+      </div>
+
+       <div class="col-md-4 bg-dark p-4 rounded">
+        <h3 class="my-3">@Model.Title</h3>
+        <p>@Model.Description</p>
+
+
+        <h3 class="my-3">Location</h3>
+        <ul class="list-unstyled border rounded-3 p-3 ">
+          <li>@Model.Address.Street</li>
+          <li>@Model.Address.City</li>
+          <li>@Model.Address.ZipCode</li>
+          <li>@Model.Address.State</li>
+        
+        </ul>
+      </div>
+
+    </div>
+
+    <h3 class="my-4 rounded bg-dark p-2 w-25">Similar Clubs.</h3>
+
+    <div class="row bg-dark p-4 rounded">
+
+        <div class="col-md-3 col-sm-6 ">
+            <a asp-action="Index" asp-controller="Club">
+                <img class="img-fluid rounded-3" src="~/images/stock4.jpg" alt="">
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 ">
+            <a asp-action="Index" asp-controller="Club">
+                <img class="img-fluid" src="~/images/stock9.jpg" alt="">
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 ">
+            <a asp-action="Index" asp-controller="Club">
+                <img class="img-fluid" src="~/images/stock13.jpg" alt="">
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 ">
+            <a asp-action="Index" asp-controller="Club">
+                <img class="img-fluid" src="~/images/stock12.jpg" alt="">
+            </a>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->

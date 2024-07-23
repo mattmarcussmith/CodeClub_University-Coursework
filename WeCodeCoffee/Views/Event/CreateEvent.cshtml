@@ -1,0 +1,71 @@
+﻿@using WeCodeCoffee.Data.Enum
+@using WeCodeCoffee.ViewModel
+@model CreateEventViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="text-center text-white"><h1>Create event</h1></div>
+<div class="d-flex justify-content-center align-items-center">
+    <form method="post"  class="w-50 d-flex flex-column" asp-action="CreateEvent" enctype="multipart/form-data">
+        <input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId" />
+        <div class="form-group mb-1">
+       
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" class="form-control" aria-describedby="emailHelp" placeholder="Title">
+
+        <span asp-validation-for="Title" class="text-danager"></span>
+    </div>
+        <div class="form-group mb-2">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" aria-describedby="emailHelp" placeholder="Description">
+
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+        <div class="form-group mb-2 ">
+        <label asp-for="Image">Image</label>
+        <input asp-for="Image" class="form-control" aria-describedby="emailHelp" placeholder="Image">
+
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+        <div class="form-group mb-2">
+        <label asp-for="EventCategory">Category</label>
+        <select asp-for="EventCategory" asp-items="@Html.GetEnumSelectList<EventCategory>()">
+            <option>--Select--</option>
+        </select>
+
+        <span asp-validation-for="EventCategory" class="text-danger"></span>
+    </div>
+        <div class="form-group mb-2">
+        <label asp-for="Address.Street">Street</label>
+        <input asp-for="Address.Street" class="form-control" aria-describedby="emailHelp" placeholder="Street">
+
+        <span asp-validation-for="Address.Street" class="text-danger"></span>
+    </div>
+        <div class="form-group mb-2">
+        <label asp-for="Address.City">City</label>
+        <input asp-for="Address.City" class="form-control" aria-describedby="emailHelp" placeholder="City">
+
+        <span asp-validation-for="Address.City" class="text-danger"></span>
+    </div>
+    <div class="form-group ">
+        <label asp-for="Address.ZipCode">Zipcode</label>
+        <input asp-for="Address.ZipCode" class="form-control" aria-describedby="emailHelp" placeholder="ZipCode">
+
+        <span asp-validation-for="Address.ZipCode" class="text-danger"></span>
+    </div>
+    <div class="form-group ">
+    <div class="form-group ">
+        <label asp-for="Address.State">State</label>
+        <input asp-for="Address.State" class="form-control" aria-describedby="emailHelp" placeholder="State">
+
+        <span asp-validation-for="Address.State" class="text-danger"></span>
+    </div>
+
+
+
+            <button type="submit" class="w-100 mt-1 btn btn-primary w-100">Submit</button>
+</form>
+</div>
